@@ -17,7 +17,7 @@ class TestGetTrackingCamera(unittest.TestCase):
             name = camera['name']
             print(name, '\n', client.get_tracking_camera(name=name), '\n')
 
-        self.assertEqual(len(cameras), 4)
+        self.assertEqual(len(cameras), 3)
 
 
 if __name__ == '__main__':

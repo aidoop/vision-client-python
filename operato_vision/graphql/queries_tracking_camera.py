@@ -1,7 +1,7 @@
 from .queries import QUERIES
 
 QUERY_TRACKING_CAMERA = 'trackingCamera'
-TRACKING_CAMERAS = 'trackingCameras'
+QUERY_TRACKING_CAMERAS = 'trackingCameras'
 
 QUERIES[QUERY_TRACKING_CAMERA] = '''
 query trackingCamera($name: String!) {
@@ -15,6 +15,11 @@ query trackingCamera($name: String!) {
         type
         endpoint
         active
+        config
+        baseRobotArm {
+            id
+            name
+        }
         cameraMatrix {
             rows
             columns
@@ -50,7 +55,7 @@ query trackingCamera($name: String!) {
 }
 '''
 
-QUERIES[TRACKING_CAMERAS] = '''
+QUERIES[QUERY_TRACKING_CAMERAS] = '''
 query {
     trackingCameras {
         items {
@@ -63,6 +68,11 @@ query {
             type
             endpoint
             active
+            config
+            baseRobotArm {
+                id
+                name
+            }
             cameraMatrix {
                 rows
                 columns

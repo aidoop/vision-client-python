@@ -6,7 +6,9 @@ import asyncio
 from gql import gql, Client as GqlClient
 from gql.transport.requests import RequestsHTTPTransport
 
-from .graphql import graphql_query, QUERY_TRACKING_CAMERA, TRACKING_CAMERAS
+from .graphql import graphql_query, graphql_mutation
+from .graphql import QUERY_VISION_WORKSPACE, QUERY_VISION_WORKSPACES, QUERY_TRACKING_CAMERA, QUERY_TRACKING_CAMERAS
+from .graphql import QUERY_TRACKABLE_OBJECT, QUERY_TRACKABLE_OBJECTS, QUERY_ROBOT_ARM, QUERY_ROBOT_ARMS, QUERY_ROBOT_ARM_POSE, MUTATION_ROBOT_ARM_POSE
 
 
 class Client:
@@ -55,7 +57,15 @@ class Client:
 
         return
 
-    @graphql_query(TRACKING_CAMERAS)
+    @graphql_query(QUERY_VISION_WORKSPACES)
+    def get_vision_workspaces(self):
+        pass
+
+    @graphql_query(QUERY_VISION_WORKSPACE, ['name'])
+    def get_vision_workspace(self, name):
+        pass
+
+    @graphql_query(QUERY_TRACKING_CAMERAS)
     def get_tracking_cameras(self):
         pass
 
@@ -63,5 +73,26 @@ class Client:
     def get_tracking_camera(self, name):
         pass
 
-    def update_tracking_camera(self, cameraPatch):
-        return
+    @graphql_query(QUERY_TRACKABLE_OBJECTS)
+    def get_trackable_objects(self):
+        pass
+
+    @graphql_query(QUERY_TRACKABLE_OBJECT, ['name'])
+    def get_trackable_object(self, name):
+        pass
+
+    @graphql_query(QUERY_ROBOT_ARMS)
+    def get_robot_arms(self):
+        pass
+
+    @graphql_query(QUERY_ROBOT_ARM, ['name'])
+    def get_robot_arm(self, name):
+        pass
+
+    @graphql_query(QUERY_ROBOT_ARM_POSE, ['name'])
+    def get_robot_arm_pose(name):
+        pass
+
+    @graphql_mutation(MUTATION_ROBOT_ARM_POSE, ['name', 'pose'])
+    def set_robot_arm_pose(name, pose):
+        pass
