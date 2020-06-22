@@ -14,7 +14,6 @@ query trackingCamera($name: String!) {
         description
         type
         endpoint
-        status
         active
         cameraMatrix {
             rows
@@ -63,7 +62,6 @@ query {
             description
             type
             endpoint
-            status
             active
             cameraMatrix {
                 rows
