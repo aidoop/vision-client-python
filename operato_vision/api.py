@@ -90,9 +90,9 @@ class Client:
         pass
 
     @graphql_query(QUERY_ROBOT_ARM_POSE, ['name'])
-    def get_robot_arm_pose(name):
+    def get_robot_arm_pose(self, name):
         pass
 
     @graphql_mutation(MUTATION_ROBOT_ARM_POSE, ['name', 'pose'])
-    def set_robot_arm_pose(name, pose):
+    def set_robot_arm_pose(self, name, pose):
         pass
