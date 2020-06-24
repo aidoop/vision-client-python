@@ -17,6 +17,14 @@ query robotArm($name: String!) {
         type
         endpoint
         active
+        markerOffset {
+            x
+            y
+            z
+            u
+            v
+            w
+        }
         gripperOffset {
             x
             y
