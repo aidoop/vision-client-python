@@ -34,7 +34,7 @@ query trackingCamera($name: String!) {
         rois {
             id
             region {
-                tl {
+                lt {
                     x
                     y
                 }
@@ -87,7 +87,7 @@ query {
             rois {
                 id
                 region {
-                    tl {
+                    lt {
                         x
                         y
                     }
