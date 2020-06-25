@@ -15,7 +15,7 @@ query trackableObject($name: String!) {
         type
         endpoint
         active
-        poseOffset {
+        poiOffset {
             x
             y
             z
@@ -48,7 +48,7 @@ query {
             type
             endpoint
             active
-            poseOffset {
+            poiOffset {
                 x
                 y
                 z

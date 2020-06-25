@@ -25,7 +25,7 @@ query robotArm($name: String!) {
             v
             w
         }
-        gripperOffset {
+        toolOffset {
             x
             y
             z
@@ -58,7 +58,7 @@ query {
             type
             endpoint
             active
-            gripperOffset {
+            toolOffset {
                 x
                 y
                 z
