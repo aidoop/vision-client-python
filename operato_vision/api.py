@@ -7,7 +7,8 @@ from gql import gql, Client as GqlClient
 from gql.transport.requests import RequestsHTTPTransport
 
 from .graphql import graphql_query, graphql_mutation
-from .graphql import QUERY_VISION_WORKSPACE, QUERY_VISION_WORKSPACES, QUERY_TRACKING_CAMERA, QUERY_TRACKING_CAMERAS
+from .graphql import QUERY_TRACKING_WORKSPACE, QUERY_TRACKING_WORKSPACES, QUERY_TRACKING_CAMERA, QUERY_TRACKING_CAMERAS
+from .graphql import MUTATION_UPDATE_WORKSPACE_STATUS
 from .graphql import QUERY_TRACKABLE_OBJECT, QUERY_TRACKABLE_OBJECTS, QUERY_ROBOT_ARM, QUERY_ROBOT_ARMS, QUERY_ROBOT_ARM_POSE, MUTATION_ROBOT_ARM_POSE
 
 
@@ -57,12 +58,12 @@ class Client:
 
         return
 
-    @graphql_query(QUERY_VISION_WORKSPACES)
-    def get_vision_workspaces(self):
+    @graphql_query(QUERY_TRACKING_WORKSPACES)
+    def get_tracking_workspaces(self):
         pass
 
-    @graphql_query(QUERY_VISION_WORKSPACE, ['name'])
-    def get_vision_workspace(self, name):
+    @graphql_query(QUERY_TRACKING_WORKSPACE, ['name'])
+    def get_tracking_workspace(self, name):
         pass
 
     @graphql_query(QUERY_TRACKING_CAMERAS)
@@ -95,4 +96,8 @@ class Client:
 
     @graphql_mutation(MUTATION_ROBOT_ARM_POSE, ['name', 'pose'])
     def set_robot_arm_pose(self, name, pose):
+        pass
+
+    @graphql_mutation(MUTATION_UPDATE_WORKSPACE_STATUS, ['name', 'status'])
+    def update_tracking_workspace_status(self, name, status):
         pass
