@@ -1,5 +1,7 @@
 import sys
 import json
+import random
+import time
 from operato_vision import Client
 
 
@@ -9,11 +11,17 @@ def main(argv):
     client = Client('http://localhost:3000', 'system')
     client.signin('admin@hatiolab.com', 'admin')
 
+    while(True):
+        update(client)
+        time.sleep(1)
+
+
+def update(client):
     status = {
         "objectStatus": [{
             "id": "obj",
             "state": {
-                "roi": "A",
+                "roi": random.choice(["A", "B"]),
                 "pose": {
                     "x": 1.0,
                     "y": 2.2,
@@ -26,7 +34,7 @@ def main(argv):
         }, {
             "id": "obj2",
             "state": {
-                "roi": "B",
+                "roi": random.choice(["A", "B"]),
                 "pose": {
                     "x": 1.0,
                     "y": 19.0,
@@ -47,4 +55,4 @@ def main(argv):
 
 if __name__ == "__main__":
     # main(sys.argv)
-    main("abc")
+    main('aaa')
