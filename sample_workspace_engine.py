@@ -1,6 +1,6 @@
 import sys
 import json
-import random
+from random import choice, random
 import time
 from operato_vision import Client
 
@@ -21,27 +21,27 @@ def update(client):
         "objectStatus": [{
             "id": "obj",
             "state": {
-                "roi": random.choice(["A", "B"]),
+                "roi": choice(["A", "B"]),
                 "pose": {
-                    "x": 1.0,
-                    "y": 2.2,
-                    "z": 3.4,
-                    "u": 4.4,
-                    "v": 7.9,
-                    "w": 9.6
+                    "x": 1.0 + random() * 1.2,
+                    "y": 2.2 + random() * 1.2,
+                    "z": 3.4 + random() * 1.2,
+                    "u": 4.4 + random() * 1.2,
+                    "v": 7.9 + random() * 1.2,
+                    "w": 9.6 + random() * 1.2
                 }
             }
         }, {
             "id": "obj2",
             "state": {
-                "roi": random.choice(["A", "B"]),
+                "roi": choice(["A", "B"]),
                 "pose": {
-                    "x": 1.0,
-                    "y": 19.0,
-                    "z": 4.4,
-                    "u": 9.4,
-                    "v": 21.9,
-                    "w": 13.6
+                    "x": 1.0 + random() * 1.2,
+                    "y": 19.0 + random() * 1.2,
+                    "z": 4.4 + random() * 1.2,
+                    "u": 9.4 + random() * 1.2,
+                    "v": 21.9 + random() * 1.2,
+                    "w": 13.6 + random() * 1.2
                 }
             }
         }]
