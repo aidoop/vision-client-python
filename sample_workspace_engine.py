@@ -54,5 +54,4 @@ def update(client):
 
 
 if __name__ == "__main__":
-    # main(sys.argv)
-    main('aaa')
+    main(sys.argv)
