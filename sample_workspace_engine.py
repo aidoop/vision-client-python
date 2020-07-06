@@ -17,32 +17,45 @@ def main(argv):
 
 
 def update(client):
+    roiA = choice(["A", "B", None, None])
+    roiB = choice(["A", "B", None, None])
+
+    if roiA == None:
+        poseA = None
+    else:
+        poseA = {
+            "x": 1.0 + random() * 1.2,
+            "y": 2.2 + random() * 1.2,
+            "z": 3.4 + random() * 1.2,
+            "u": 4.4 + random() * 1.2,
+            "v": 7.9 + random() * 1.2,
+            "w": 9.6 + random() * 1.2
+        }
+
+    if roiB == None:
+        poseB = None
+    else:
+        poseB = {
+            "x": 1.0 + random() * 1.2,
+            "y": 2.2 + random() * 1.2,
+            "z": 3.4 + random() * 1.2,
+            "u": 4.4 + random() * 1.2,
+            "v": 7.9 + random() * 1.2,
+            "w": 9.6 + random() * 1.2
+        }
+
     status = {
         "objectStatus": [{
             "id": "obj",
             "state": {
-                "roi": choice(["A", "B"]),
-                "pose": {
-                    "x": 1.0 + random() * 1.2,
-                    "y": 2.2 + random() * 1.2,
-                    "z": 3.4 + random() * 1.2,
-                    "u": 4.4 + random() * 1.2,
-                    "v": 7.9 + random() * 1.2,
-                    "w": 9.6 + random() * 1.2
-                }
+                "roi": roiA,
+                "pose": poseA
             }
         }, {
             "id": "obj2",
             "state": {
-                "roi": choice(["A", "B"]),
-                "pose": {
-                    "x": 1.0 + random() * 1.2,
-                    "y": 19.0 + random() * 1.2,
-                    "z": 4.4 + random() * 1.2,
-                    "u": 9.4 + random() * 1.2,
-                    "v": 21.9 + random() * 1.2,
-                    "w": 13.6 + random() * 1.2
-                }
+                "roi": roiB,
+                "pose": poseB
             }
         }]
     }
