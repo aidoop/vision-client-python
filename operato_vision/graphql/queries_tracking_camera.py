@@ -44,6 +44,16 @@ query trackingCamera($name: String!) {
                 }
             }
         }
+        camObjOffset {
+            x
+            y
+            z
+            u
+            v
+            w
+        }    
+        width
+        height            
         updater {
             email
         }

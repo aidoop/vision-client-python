@@ -21,10 +21,11 @@ class Client:
 
     def signin(self, email, password):
 
-        url = '{0}/signin'.format(self.endpoint)
+        url = '{0}/auth/signin'.format(self.endpoint)
         headers = {
             "Content-Type": "application/json",
-            "x-only-token": "true"
+            "Accept": "application/json"
+            # "x-only-token": "true"
         }
         security = {
             'email': email,
@@ -42,7 +43,7 @@ class Client:
 
         reqHeaders = {
             'authorization': self.access_token,
-            'x-things-factory-domain': self.domain
+            # 'x-things-factory-domain': self.domain
         }
 
         _transport = RequestsHTTPTransport(
