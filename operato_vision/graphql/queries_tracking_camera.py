@@ -107,6 +107,16 @@ query {
                     }
                 }
             }
+            camObjOffset {
+                x
+                y
+                z
+                u
+                v
+                w
+            }    
+            width
+            height                
             updater {
                 email
             }
