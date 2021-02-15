@@ -1,9 +1,11 @@
 from .queries import QUERIES
 
-QUERY_TRACKING_CAMERA = 'trackingCamera'
-QUERY_TRACKING_CAMERAS = 'trackingCameras'
+QUERY_TRACKING_CAMERA = "trackingCamera"
+QUERY_TRACKING_CAMERAS = "trackingCameras"
 
-QUERIES[QUERY_TRACKING_CAMERA] = '''
+QUERIES[
+    QUERY_TRACKING_CAMERA
+] = """
 query trackingCamera($name: String!) {
     trackingCamera(name:$name) {
         id
@@ -26,7 +28,6 @@ query trackingCamera($name: String!) {
             data
         }
         distortionCoefficient
-        handEyeAutoMode
         handEyeMatrix {
             rows
             columns
@@ -54,7 +55,10 @@ query trackingCamera($name: String!) {
             w
         }    
         width
-        height            
+        height
+        autoHandeyeTotalIterations
+        autoHandeyeMoveXyz
+        autoHandeyeMoveUvw
         updater {
             email
         }
@@ -65,9 +69,11 @@ query trackingCamera($name: String!) {
         createdAt
     }
 }
-'''
+"""
 
-QUERIES[QUERY_TRACKING_CAMERAS] = '''
+QUERIES[
+    QUERY_TRACKING_CAMERAS
+] = """
 query {
     trackingCameras {
         items {
@@ -90,7 +96,6 @@ query {
                 columns
                 data
             }
-            handEyeAutoMode
             handEyeMatrix {
                 rows
                 columns
@@ -118,7 +123,10 @@ query {
                 w
             }    
             width
-            height               
+            height
+            autoHandeyeTotalIterations
+            autoHandeyeMoveXyz
+            autoHandeyeMoveUvw
             updater {
                 email
             }
@@ -131,4 +139,4 @@ query {
         total
     }
 }
-'''
+"""
