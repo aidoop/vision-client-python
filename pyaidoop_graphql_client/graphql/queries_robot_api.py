@@ -1,13 +1,15 @@
-from .queries import QUERIES, MUTATION
+from pyaidoop_graphql_client.graphql.queries import QUERIES, MUTATION
 
-QUERY_ROBOTAPI_GET_STATUS = 'robotArmGetStatus'
+QUERY_ROBOTAPI_GET_STATUS = "robotArmGetStatus"
 
-MUTATION_ROBOTAPI_GOHOME = 'robotArmGoHome'
-MUTATION_ROBOTAPI_TASKMOVEBY = 'robotArmTaskMoveBy'
-MUTATION_ROBOTAPI_TASKMOVEBYNOWAIT = 'robotArmTaskMoveByNoWait'
+MUTATION_ROBOTAPI_GOHOME = "robotArmGoHome"
+MUTATION_ROBOTAPI_TASKMOVEBY = "robotArmTaskMoveBy"
+MUTATION_ROBOTAPI_TASKMOVEBYNOWAIT = "robotArmTaskMoveByNoWait"
 
 
-QUERIES[QUERY_ROBOTAPI_GET_STATUS] = '''
+QUERIES[
+    QUERY_ROBOTAPI_GET_STATUS
+] = """
 query robotArmGetStatus($name: String!) {
     robotArmGetStatus(name:$name) {
         running
@@ -22,16 +24,20 @@ query robotArmGetStatus($name: String!) {
         emergency         
     }
 }
-'''
+"""
 
 
-MUTATION[MUTATION_ROBOTAPI_GOHOME] = '''
+MUTATION[
+    MUTATION_ROBOTAPI_GOHOME
+] = """
 mutation robotArmGoHome($name: String!) {
     robotArmGoHome(name:$name)
 }
-'''
+"""
 
-MUTATION[MUTATION_ROBOTAPI_TASKMOVEBY] = '''
+MUTATION[
+    MUTATION_ROBOTAPI_TASKMOVEBY
+] = """
 mutation robotArmTaskMoveBy($name: String!, $pose: PoseInput!) {
     robotArmTaskMoveBy(name:$name, pose:$pose) {
         x
@@ -42,9 +48,11 @@ mutation robotArmTaskMoveBy($name: String!, $pose: PoseInput!) {
         w
     }
 }
-'''
+"""
 
-MUTATION[MUTATION_ROBOTAPI_TASKMOVEBYNOWAIT] = '''
+MUTATION[
+    MUTATION_ROBOTAPI_TASKMOVEBYNOWAIT
+] = """
 mutation robotArmTaskMoveByNoWait($name: String!, $pose: PoseInput!) {
     robotArmTaskMoveByNoWait(name:$name, pose:$pose) {
         x
@@ -55,4 +63,4 @@ mutation robotArmTaskMoveByNoWait($name: String!, $pose: PoseInput!) {
         w
     }
 }
-'''
+"""

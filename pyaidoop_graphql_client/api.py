@@ -6,15 +6,15 @@ import asyncio
 from gql import gql, Client as GqlClient
 from gql.transport.requests import RequestsHTTPTransport
 
-from .graphql import graphql_query, graphql_mutation
-from .graphql import (
+from pyaidoop_graphql_client.graphql import graphql_query, graphql_mutation
+from pyaidoop_graphql_client.graphql import (
     QUERY_TRACKING_WORKSPACE,
     QUERY_TRACKING_WORKSPACES,
     QUERY_TRACKING_CAMERA,
     QUERY_TRACKING_CAMERAS,
 )
-from .graphql import MUTATION_UPDATE_WORKSPACE_STATUS
-from .graphql import (
+from pyaidoop_graphql_client.graphql import MUTATION_UPDATE_WORKSPACE_STATUS
+from pyaidoop_graphql_client.graphql import (
     QUERY_TRACKABLE_OBJECT,
     QUERY_TRACKABLE_OBJECTS,
     QUERY_ROBOT_ARM,
@@ -22,7 +22,7 @@ from .graphql import (
     QUERY_ROBOT_ARM_POSE,
     MUTATION_ROBOT_ARM_POSE,
 )
-from .graphql import (
+from pyaidoop_graphql_client.graphql import (
     MUTATION_ROBOTAPI_GOHOME,
     MUTATION_ROBOTAPI_TASKMOVEBY,
     QUERY_ROBOTAPI_GET_STATUS,

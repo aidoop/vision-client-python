@@ -2,16 +2,16 @@ import sys
 import json
 from random import choice, random
 import time
-from operato_vision import Client
+from pyaidoop_graphql_client.api import Client
 
 
 def main(argv):
     workspaceName = argv[1]
 
-    client = Client('http://localhost:3000', 'system')
-    client.signin('admin@hatiolab.com', 'admin')
+    client = Client("http://localhost:3000", "system")
+    client.signin("admin@hatiolab.com", "admin")
 
-    while(True):
+    while True:
         update(client)
         time.sleep(1)
 
@@ -29,7 +29,7 @@ def update(client):
             "z": 3.4 + random() * 1.2,
             "u": 4.4 + random() * 1.2,
             "v": 7.9 + random() * 1.2,
-            "w": 9.6 + random() * 1.2
+            "w": 9.6 + random() * 1.2,
         }
 
     if roiB == None:
@@ -41,27 +41,17 @@ def update(client):
             "z": 3.4 + random() * 1.2,
             "u": 4.4 + random() * 1.2,
             "v": 7.9 + random() * 1.2,
-            "w": 9.6 + random() * 1.2
+            "w": 9.6 + random() * 1.2,
         }
 
     status = {
-        "objectStatus": [{
-            "id": "obj",
-            "state": {
-                "roi": roiA,
-                "pose": poseA
-            }
-        }, {
-            "id": "obj2",
-            "state": {
-                "roi": roiB,
-                "pose": poseB
-            }
-        }]
+        "objectStatus": [
+            {"id": "obj", "state": {"roi": roiA, "pose": poseA}},
+            {"id": "obj2", "state": {"roi": roiB, "pose": poseB}},
+        ]
     }
 
-    result = client.update_tracking_workspace_status(
-        name='workspace', status=status)
+    result = client.update_tracking_workspace_status(name="workspace", status=status)
 
     print(result)
 

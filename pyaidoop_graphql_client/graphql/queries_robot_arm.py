@@ -1,4 +1,4 @@
-from .queries import QUERIES, MUTATION
+from pyaidoop_graphql_client.graphql.queries import QUERIES, MUTATION
 
 QUERY_ROBOT_ARM = "robotArm"
 QUERY_ROBOT_ARMS = "robotArms"

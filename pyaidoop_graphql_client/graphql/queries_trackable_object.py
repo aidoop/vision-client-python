@@ -1,9 +1,11 @@
-from .queries import QUERIES
+from pyaidoop_graphql_client.graphql.queries import QUERIES
 
-QUERY_TRACKABLE_OBJECT = 'trackableObject'
-QUERY_TRACKABLE_OBJECTS = 'trackableObjects'
+QUERY_TRACKABLE_OBJECT = "trackableObject"
+QUERY_TRACKABLE_OBJECTS = "trackableObjects"
 
-QUERIES[QUERY_TRACKABLE_OBJECT] = '''
+QUERIES[
+    QUERY_TRACKABLE_OBJECT
+] = """
 query trackableObject($name: String!) {
     trackableObject(name:$name) {
         id
@@ -33,9 +35,11 @@ query trackableObject($name: String!) {
         createdAt
     }
 }
-'''
+"""
 
-QUERIES[QUERY_TRACKABLE_OBJECTS] = '''
+QUERIES[
+    QUERY_TRACKABLE_OBJECTS
+] = """
 query {
     trackableObjects {
         items {
@@ -68,4 +72,4 @@ query {
         total
     }
 }
-'''
+"""

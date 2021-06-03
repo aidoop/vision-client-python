@@ -1,4 +1,4 @@
-from .queries import QUERIES
+from pyaidoop_graphql_client.graphql.queries import QUERIES
 
 QUERY_TRACKING_CAMERA = "trackingCamera"
 QUERY_TRACKING_CAMERAS = "trackingCameras"
