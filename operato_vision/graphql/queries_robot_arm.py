@@ -1,11 +1,13 @@
 from .queries import QUERIES, MUTATION
 
-QUERY_ROBOT_ARM = 'robotArm'
-QUERY_ROBOT_ARMS = 'robotArms'
-QUERY_ROBOT_ARM_POSE = 'robotArmPose'
-MUTATION_ROBOT_ARM_POSE = 'updateRobotArmPose'
+QUERY_ROBOT_ARM = "robotArm"
+QUERY_ROBOT_ARMS = "robotArms"
+QUERY_ROBOT_ARM_POSE = "robotArmPose"
+MUTATION_ROBOT_ARM_POSE = "updateRobotArmPose"
 
-QUERIES[QUERY_ROBOT_ARM] = '''
+QUERIES[
+    QUERY_ROBOT_ARM
+] = """
 query robotArm($name: String!) {
     robotArm(name:$name) {
         id
@@ -43,9 +45,11 @@ query robotArm($name: String!) {
         createdAt
     }
 }
-'''
+"""
 
-QUERIES[QUERY_ROBOT_ARMS] = '''
+QUERIES[
+    QUERY_ROBOT_ARMS
+] = """
 query {
     robotArms {
         items {
@@ -78,10 +82,12 @@ query {
         total
     }
 }
-'''
+"""
 
 
-QUERIES[QUERY_ROBOT_ARM_POSE] = '''
+QUERIES[
+    QUERY_ROBOT_ARM_POSE
+] = """
 query robotArmPose($name: String!) {
     robotArmPose(name:$name) {
         x
@@ -92,14 +98,16 @@ query robotArmPose($name: String!) {
         v
     }
 }
-'''
+"""
 
 
-MUTATION[MUTATION_ROBOT_ARM_POSE] = '''
+MUTATION[
+    MUTATION_ROBOT_ARM_POSE
+] = """
 mutation updateRobotArmPose($name: String!, $pose: PoseInput!) {
     updateRobotArmPose(name:$name, pose:$pose) {
         id
         name
     }
 }
-'''
+"""
