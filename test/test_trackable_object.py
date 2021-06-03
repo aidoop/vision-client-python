@@ -1,6 +1,6 @@
 import unittest
 
-from operato_vision import Client
+from pyaidoop_graphql_client.api import Client
 
 
 class TestGetTrackableObject(unittest.TestCase):
@@ -8,17 +8,17 @@ class TestGetTrackableObject(unittest.TestCase):
         """
         트래킹 카메라 리스트를 조회하는 API 테스트
         """
-        client = Client('http://localhost:3000', 'system')
-        client.signin('admin@hatiolab.com', 'admin')
+        client = Client("http://localhost:3000", "system")
+        client.signin("admin@hatiolab.com", "admin")
 
-        obzects = client.get_trackable_objects()['items']
+        obzects = client.get_trackable_objects()["items"]
 
         for obzect in obzects:
-            name = obzect['name']
-            print(name, '\n', client.get_trackable_object(name=name), '\n')
+            name = obzect["name"]
+            print(name, "\n", client.get_trackable_object(name=name), "\n")
 
         self.assertEqual(len(obzects), 0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
