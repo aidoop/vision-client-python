@@ -12,3 +12,12 @@ python setup.py sdist bdist_wheel
 pip install twine
 python -m twine upload dist/*
 ``` 
+
+### test commands
+- Prerequisites
+  - run aidoop-r node servere before 
+  - add appropriate connections with parameters in aidoop-r
+```
+cd test
+python -m unittest 
+```
