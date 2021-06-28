@@ -20,6 +20,8 @@ query trackingWorkspace($name: String!) {
         active
         checkVideoStream
         detectionMethod
+        objectDetectionMethod
+        modelWeightPath
         robotArms {
             id
             name
@@ -74,6 +76,8 @@ query {
             active
             checkVideoStream
             detectionMethod
+            objectDetectionMethod
+            modelWeightPath
             robotArms {
                 id
                 name

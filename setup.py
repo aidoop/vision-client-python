@@ -11,7 +11,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name="pyaidoop-graphql-client",
-    version="0.1.1",
+    version="0.2.0",
     author="",
     author_email="",
     url="https://github.com/aidoop/vision-client-python.git",
