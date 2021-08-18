@@ -17,7 +17,7 @@ query trackingCamera($name: String!) {
         type
         endpoint
         active
-        config
+        params
         baseRobotArm {
             id
             name
@@ -89,7 +89,7 @@ query {
             type
             endpoint
             active
-            config
+            params
             baseRobotArm {
                 id
                 name
